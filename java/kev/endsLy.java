@@ -1,13 +1,7 @@
 public Boolean endsLy(String str) {
-  // if (str.length()>1){
-  //   return  str.substring(str.length()-2,str.length()) == "ly" ;
-  // }
-
-  // return false;
-
-  //str.contains("ly") &&
+//！！！ 用equals比较是否内容相等 ==比较是否reference一样
   if (str.length()>1){
-    return  str.substring(str.length()-2,str.length()) == "ly" ;
+    return  str.substring(str.length()-2,str.length()).equals("ly") ;
   }
 
   return false;
