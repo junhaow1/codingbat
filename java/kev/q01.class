@@ -1,0 +1,130 @@
+import com.sun.tools.classfile.ConstantPool;
+
+public class Test0202 {
+
+    public static final int SIZE = 5;
+
+    public static void printMultiplicationTable(){
+        int n = 5;
+        String output = "   * ";
+
+        for(int i=1;i<=n;i++){
+            output += "|";
+            output += String.format("  %2d ",i);
+        }
+        System.out.println(output);
+
+        for (int k=1;k<=n;k++){
+
+            String output2 = String.format("  %2d ",k);
+
+            for (int j = 1 ; j <6 ; j++){
+                output2 += "|";
+                output2 += String.format("  %2d ",j*k);
+            }
+            String line = "-----";
+            for (int num =1;num<6;num++){
+                line += "+-----";
+            }
+            System.out.println(line);
+            System.out.println(output2);
+        }
+
+    }
+
+
+
+    public static void printMultiplicationTable(int m){
+        int n = m;
+        String output = "   * ";
+
+        for(int i=1;i<=n;i++){
+            output += "|";
+            output += String.format("  %2d ",i);
+        }
+        System.out.println(output);
+
+        for (int k=1;k<=n;k++){
+
+            String output2 = String.format("  %2d ",k);
+
+            for (int j = 1 ; j <m+1 ; j++){
+                output2 += "|";
+                output2 += String.format("  %2d ",j*k);
+            }
+            String line = "-----";
+            for (int num =1;num<m+1;num++){
+                line += "+-----";
+            }
+            System.out.println(line);
+            System.out.println(output2);
+        }
+
+    }
+
+    public static void printMultiplicationTable(int m, int p){
+        int n = m;
+        String output = "   * ";
+
+        for(int i=1;i<=n;i++){
+            output += "|";
+            output += String.format("  %2d ",i);
+        }
+        System.out.println(output);
+
+        for (int k=1;k<=p;k++){
+
+            String output2 = String.format("  %2d ",k);
+
+            for (int j = 1 ; j <m+1 ; j++){
+                output2 += "|";
+                output2 += String.format("  %2d ",j*k);
+            }
+            String line = "-----";
+            for (int num =1;num<m+1;num++){
+                line += "+-----";
+            }
+            System.out.println(line);
+            System.out.println(output2);
+        }
+
+    }
+
+
+
+    public static void main(String[] args){
+//        int n =4, m =7;
+//        printMultiplicationTable();
+//        System.out.println();
+        printMultiplicationTable(10,5);
+
+
+
+
+
+//        int n = 9;
+//        String output = "   * ";
+//
+//        for(int i=1;i<=n;i++){
+//            output += "|";
+//            output += String.format("  %2d ",i);
+//        }
+//        System.out.println(output);
+//
+//        for (int k=1;k<=n;k++){
+//
+//            String output2 = String.format("  %2d ",k);
+//
+//            for (int j = 1 ; j <10 ; j++){
+//                    output2 += "|";
+//                    output2 += String.format("  %2d ",j*k);
+//            }
+//            String line = "-----";
+//            for (int num =1;num<10;num++){
+//                line += "+-----";
+//            }
+//            System.out.println(line);
+//            System.out.println(output2);
+//        }
+    }
+}
