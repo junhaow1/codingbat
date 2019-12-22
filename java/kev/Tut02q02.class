@@ -1,0 +1,17 @@
+import java.rmi.UnexpectedException;
+import java.util.Scanner;
+
+public class Tut02q02 {
+
+    public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        int num = scanner.nextInt();
+
+        int op = (num+n/2)%n;
+
+
+        System.out.format("the num opposite to %d"+" with %d numbers is %d",num,n,op);
+
+    }
+}

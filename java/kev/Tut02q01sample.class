@@ -1,0 +1,36 @@
+public class Tut02q01sample {
+    public static void main(String[] args){
+        final String COL_SEPARATOR = "|";
+        final String ROW_SEPARATOR = "-----";
+        final String INTERSECTION = "+";
+        int n = 9;
+        String output = "   * ";
+        for (int i = 1; i<=n;i++){
+            output += COL_SEPARATOR;
+            output += String.format(" %3d ",i);
+        }
+        System.out.println(output);
+        for (int row = 1; row<= n;row++){
+            output = "";
+            for (int col =0; col<= n; col++){
+                output += ROW_SEPARATOR;
+                if (col<n){
+                    output += INTERSECTION;
+                }
+            }
+            System.out.println(output);
+            output = String.format("%3d",row);
+            for (int col =1 ;col <=n; col++){
+                output += COL_SEPARATOR;
+                output += String.format(" %3d ", row*col);
+            }
+            System.out.println(output);
+        }
+    }
+
+
+
+
+
+
+}
