@@ -46,4 +46,44 @@ int main(void)
         }
     }
 
+    printf("\nHorizontal histogram:\n\n");
+    printf(" length | graph\n");
+    for (i = 0; i <= MAX_LENGTH; ++i) {
+        if (i != MAX_LENGTH)
+            printf("     %2d | ", i + 1);
+        else
+            printf("    >%2d | ", MAX_LENGTH);
+        for (j = 0; j < word_length[i]; ++j)
+            putchar('+');
+        putchar('\n');
+    }
+
+    printf("\nVertical histogram:\n\n");
+    max_count = 0;
+    for (i = 0; i <= MAX_LENGTH; ++i)
+        if (word_length[i] > max_count)
+            max_count = word_length[i];
+
+    for (i = 0; i < max_count; ++i) {
+        printf("  %2u | ", max_count - i);
+        for (j = 0; j <= MAX_LENGTH; ++j)
+            if (word_length[j] >= max_count - i)
+                printf("  +");
+            else
+                printf("   ");
+        printf("\n");
+    }
+
+    printf(" ------");
+    for (i = 0; i <= MAX_LENGTH; ++i)
+        printf("---");
+    printf("--\n");
+
+    printf("       ");
+    for (i = 0; i < MAX_LENGTH;)
+        printf(" %2u", ++i);
+    printf(" >%2u", MAX_LENGTH);
+    printf("\n");
+
+    return 0;
 }

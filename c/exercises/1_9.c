@@ -10,8 +10,19 @@
 
 int main(void)
 {
-    
-    printf("Input some characters\n");
-    
+    int c, blank_recieved;
+    blank_recieved = 0;
+    printf("Input some characters, when you finishes, press Ctrl+D.\n");
+    while ((c = getchar()) != EOF)
+        if (c == ' ') {
+            if (!blank_recieved) {
+                blank_recieved = 1;
+                putchar(c);
+            }
+        } else {
+            blank_recieved = 0;
+            putchar(c);
+        }
+
     return 0;
 }
