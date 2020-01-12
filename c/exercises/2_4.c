@@ -6,20 +6,6 @@
 //  Copyright © 2020 Junhao Wang. All rights reserved.
 //
 
-
-//void squeeze(char s[], int c){
-//    int i=0;
-//    int j=0;
-//    while (s[i]!='\0'){
-//        if (s[i] != c){
-//            s[j++]=s[i];
-//        }
-//    }
-//    s[j] = '\0';
-//
-//
-//}
-
 #include <stdio.h>
 
 #define MAXLINE 1000
@@ -59,22 +45,38 @@ int get_line(char s[], int lim)
     return l;
 }
 
-/* This implementation is a bit more complicated*/
+/* something wrong here*/
 void squeeze(char s1[], char s2[])
 {
     int i, j, k;
 
-    i = 0;
-    while (s2[i] != '\0') {
-        j = 0;
-        while (s1[j] != '\0') {
-            if (s1[j] == s2[i]) {
-                k = j;
-                while ((s1[k] = s1[++k]) != '\0')
-                    ;
-            } else
-                ++j;
+    for(i=k=0;s1[i]!='\0';i++ ){
+        for (j=0;s2[j]!='\0' && s2[j] !=s1[i];j++ )
+            ;
+        if(s2[j] == '\0' ){
+            s1[k++] = s1[i];
         }
-        ++i;
+            
     }
+    s1[k] = '\0';
 }
+
+/* This implementation is a bit more complicated*/
+//void squeeze(char s1[], char s2[])
+//{
+//    int i, j, k;
+//
+//    i = 0;
+//    while (s2[i] != '\0') {
+//        j = 0;
+//        while (s1[j] != '\0') {
+//            if (s1[j] == s2[i]) {
+//                k = j;
+//                while ((s1[k] = s1[++k]) != '\0')
+//                    ;
+//            } else
+//                ++j;
+//        }
+//        ++i;
+//    }
+//}
