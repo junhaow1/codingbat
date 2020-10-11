@@ -13,7 +13,7 @@ public class Codec {
     }
 
     // Decodes a shortened URL to its original URL.
-    public String decode(String shortUr  n  l) {
+    public String decode(String shortUrl) {
         return my.get(shortUrl);
     }
 }
