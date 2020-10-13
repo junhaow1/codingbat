@@ -1,5 +1,3 @@
-import java.util.*;
-
 public class Solution {
     public String reverseVowels(String s) {
         int i = 0;
@@ -22,8 +20,6 @@ public class Solution {
 
         return r.toString();
     }
-
-
 
 
     public static void main(String[] args) {
